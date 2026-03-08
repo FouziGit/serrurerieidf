@@ -13,6 +13,48 @@ const citiesPath = path.join(__dirname, 'data', 'cities.json');
 const templatePath = path.join(__dirname, 'template-city.html');
 const outputDir = path.join(__dirname, 'pages-villes');
 
+// --- SEO Content Generator ---
+function generateSEOContent(cityName, zip, deptName, deptCode) {
+    const isParis = deptCode === '75';
+    const isPC = ['92', '93', '94'].includes(deptCode); // petite couronne
+    const isGC = ['77', '78', '91', '95'].includes(deptCode); // grande couronne
+
+    const delai = isParis ? '20 minutes' : isPC ? '30 minutes' : '45 minutes';
+    const zone = isParis ? `dans le ${cityName}` : `à ${cityName} (${zip})`;
+    const deptLabel = isParis ? 'Paris' : `${deptName} (${deptCode})`;
+
+    // Variantes de paragraphes pour diversifier le contenu
+    const intros = [
+        `<p><strong>Urgence Serrures</strong> est votre <strong>serrurier de confiance ${zone}</strong>. Disponible <strong>24h/24 et 7j/7</strong>, notre équipe d'artisans qualifiés intervient en moins de <strong>${delai}</strong> pour tous vos besoins en serrurerie : ouverture de porte claquée, remplacement de cylindre haute sécurité, blindage de porte et installation de serrures multipoints.</p>`,
+        `<p>Vous cherchez un <strong>serrurier fiable et rapide ${zone}</strong> ? <strong>Urgence Serrures</strong> met à votre disposition des artisans serruriers expérimentés, disponibles <strong>24 heures sur 24</strong>. Nous intervenons en <strong>${delai}</strong> maximum pour l'ouverture de porte, le changement de serrure, le blindage et toute urgence serrurerie.</p>`,
+        `<p>Besoin d'un <strong>serrurier en urgence ${zone}</strong> ? <strong>Urgence Serrures</strong> intervient <strong>7 jours sur 7</strong>, de jour comme de nuit, en moins de <strong>${delai}</strong>. Nos artisans serruriers certifiés assurent tous types de prestations : ouverture fine sans dégâts, pose de cylindres A2P, blindage de porte et remplacement de serrures multipoints.</p>`,
+    ];
+
+    const services = [
+        `<p style="margin-top: 1rem;">Notre spécialité ${zone} est l'<strong>ouverture de porte sans destruction</strong>. Grâce à des techniques fines (crochetage, by-pass, décodage), nous ouvrons votre porte sans endommager la serrure ni le bâti dans plus de 95% des cas. Que vous ayez claqué votre porte, perdu vos clés ou cassé une clé dans la serrure, nous avons la solution adaptée.</p>`,
+        `<p style="margin-top: 1rem;">Nous proposons ${zone} le <strong>changement de cylindre haute sécurité A2P</strong> (Assurance Prévention Protection), recommandé après un cambriolage, une perte de clés ou un emménagement. Nous installons des cylindres certifiés A2P des marques <strong>Bricard, Vachette, Mul-T-Lock et Fichet</strong>, avec 3 niveaux de résistance : A2P* (5 min), A2P** (10 min) et A2P*** (15 min).</p>`,
+        `<p style="margin-top: 1rem;">Pour renforcer la sécurité de votre domicile ${zone}, nous réalisons le <strong>blindage de porte</strong> : pose d'une tôle en acier sur votre porte existante avec serrure multipoints certifiée. Cette solution offre un excellent rapport sécurité-prix sans remplacer votre porte. Nous installons également des <strong>portes blindées certifiées A2P BP</strong> (bloc-porte complet avec huisserie renforcée).</p>`,
+    ];
+
+    const geoBlocks = [];
+    if (isParis) {
+        geoBlocks.push(`<p style="margin-top: 1rem;">Situés à Paris, nos serruriers connaissent parfaitement <strong>le ${cityName}</strong> et ses spécificités : immeubles haussmanniens, portes anciennes, serrures de copropriété. Nous intervenons aussi bien chez les particuliers que dans les commerces et bureaux de l'arrondissement. Notre proximité garantit un <strong>temps d'intervention parmi les plus rapides de Paris</strong>.</p>`);
+    } else if (isPC) {
+        geoBlocks.push(`<p style="margin-top: 1rem;">Nos artisans serruriers interviennent régulièrement <strong>${zone}</strong> et dans l'ensemble du département des <strong>${deptLabel}</strong>. Nous connaissons les particularités du parc immobilier local — résidences, pavillons, immeubles récents — et adaptons nos interventions en conséquence. Grâce à notre implantation en Île-de-France, nous garantissons un <strong>déplacement rapide en ${delai}</strong>.</p>`);
+    } else {
+        geoBlocks.push(`<p style="margin-top: 1rem;">Même en grande couronne, <strong>Urgence Serrures</strong> assure un service réactif <strong>${zone}</strong> et dans tout le département ${deptLabel}. Nos équipes mobiles couvrent l'intégralité du secteur et arrivent sur place en <strong>${delai} maximum</strong>. Pavillons, résidences, locaux professionnels : nous intervenons sur tous types de bâtiments.</p>`);
+    }
+
+    geoBlocks.push(`<p style="margin-top: 1rem;">En tant qu'<strong>artisan serrurier agréé assurances</strong>, nous fournissons systématiquement une <strong>facture détaillée conforme</strong> aux exigences des compagnies d'assurances pour faciliter votre remboursement. Devis gratuit, tarifs transparents annoncés avant intervention et garantie décennale sur tous nos travaux ${zone}.</p>`);
+
+    // Sélection basée sur un hash simple du nom de ville pour varier le contenu
+    const hash = cityName.split('').reduce((a, c) => a + c.charCodeAt(0), 0);
+    const intro = intros[hash % intros.length];
+    const service = services[hash % services.length];
+
+    return intro + service + geoBlocks.join('');
+}
+
 function generateSlug(name) {
     return name
         .toLowerCase()
@@ -71,7 +113,10 @@ function main() {
                 .replace(/{{META_DESC}}/g, metaDesc)
                 .replace(/{{CANONICAL}}/g, canonicalUrl)
                 .replace(/{{H1_TITLE}}/g, h1Title)
-                .replace(/{{JSON_AREA_SERVED}}/g, `        "${city.name}",\n        "${dept.name}",\n        "Île-de-France"`);
+                .replace(/{{JSON_AREA_SERVED}}/g, `        "${city.name}",\n        "${dept.name}",\n        "Île-de-France"`)
+                .replace(/{{CITY_NAME}}/g, city.name)
+                .replace(/{{DEPT_NAME}}/g, dept.name)
+                .replace(/{{SEO_CONTENT}}/g, generateSEOContent(city.name, city.zip, dept.name, dept.code));
 
             // Save HTML file
             const fileName = `${slug}.html`;
