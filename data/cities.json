@@ -1,0 +1,165 @@
+{
+  "departments": [
+    {
+      "code": "75",
+      "name": "Paris",
+      "cities": [
+        {"name": "Paris 1er", "zip": "75001", "slug": "serrurier-paris-1-75001"},
+        {"name": "Paris 2ème", "zip": "75002", "slug": "serrurier-paris-2-75002"},
+        {"name": "Paris 3ème", "zip": "75003", "slug": "serrurier-paris-3-75003"},
+        {"name": "Paris 4ème", "zip": "75004", "slug": "serrurier-paris-4-75004"},
+        {"name": "Paris 5ème", "zip": "75005", "slug": "serrurier-paris-5-75005"},
+        {"name": "Paris 6ème", "zip": "75006", "slug": "serrurier-paris-6-75006"},
+        {"name": "Paris 7ème", "zip": "75007", "slug": "serrurier-paris-7-75007"},
+        {"name": "Paris 8ème", "zip": "75008", "slug": "serrurier-paris-8-75008"},
+        {"name": "Paris 9ème", "zip": "75009", "slug": "serrurier-paris-9-75009"},
+        {"name": "Paris 10ème", "zip": "75010", "slug": "serrurier-paris-10-75010"},
+        {"name": "Paris 11ème", "zip": "75011", "slug": "serrurier-paris-11-75011"},
+        {"name": "Paris 12ème", "zip": "75012", "slug": "serrurier-paris-12-75012"},
+        {"name": "Paris 13ème", "zip": "75013", "slug": "serrurier-paris-13-75013"},
+        {"name": "Paris 14ème", "zip": "75014", "slug": "serrurier-paris-14-75014"},
+        {"name": "Paris 15ème", "zip": "75015", "slug": "serrurier-paris-15-75015"},
+        {"name": "Paris 16ème", "zip": "75016", "slug": "serrurier-paris-16-75016"},
+        {"name": "Paris 17ème", "zip": "75017", "slug": "serrurier-paris-17-75017"},
+        {"name": "Paris 18ème", "zip": "75018", "slug": "serrurier-paris-18-75018"},
+        {"name": "Paris 19ème", "zip": "75019", "slug": "serrurier-paris-19-75019"},
+        {"name": "Paris 20ème", "zip": "75020", "slug": "serrurier-paris-20-75020"}
+      ]
+    },
+    {
+      "code": "77",
+      "name": "Seine-et-Marne",
+      "cities": [
+        {"name": "Meaux", "zip": "77100", "slug": "serrurier-meaux-77100"},
+        {"name": "Chelles", "zip": "77500", "slug": "serrurier-chelles-77500"},
+        {"name": "Melun", "zip": "77000", "slug": "serrurier-melun-77000"},
+        {"name": "Pontault-Combault", "zip": "77340", "slug": "serrurier-pontault-combault-77340"},
+        {"name": "Savigny-le-Temple", "zip": "77176", "slug": "serrurier-savigny-le-temple-77176"},
+        {"name": "Champs-sur-Marne", "zip": "77420", "slug": "serrurier-champs-sur-marne-77420"},
+        {"name": "Torcy", "zip": "77200", "slug": "serrurier-torcy-77200"},
+        {"name": "Roissy-en-Brie", "zip": "77680", "slug": "serrurier-roissy-en-brie-77680"},
+        {"name": "Combs-la-Ville", "zip": "77380", "slug": "serrurier-combs-la-ville-77380"},
+        {"name": "Lagny-sur-Marne", "zip": "77400", "slug": "serrurier-lagny-sur-marne-77400"},
+        {"name": "Dammarie-les-Lys", "zip": "77190", "slug": "serrurier-dammarie-les-lys-77190"},
+        {"name": "Bussy-Saint-Georges", "zip": "77600", "slug": "serrurier-bussy-saint-georges-77600"}
+      ]
+    },
+    {
+      "code": "78",
+      "name": "Yvelines",
+      "cities": [
+        {"name": "Versailles", "zip": "78000", "slug": "serrurier-versailles-78000"},
+        {"name": "Sartrouville", "zip": "78500", "slug": "serrurier-sartrouville-78500"},
+        {"name": "Mantes-la-Jolie", "zip": "78200", "slug": "serrurier-mantes-la-jolie-78200"},
+        {"name": "Saint-Germain-en-Laye", "zip": "78100", "slug": "serrurier-saint-germain-en-laye-78100"},
+        {"name": "Poissy", "zip": "78300", "slug": "serrurier-poissy-78300"},
+        {"name": "Conflans-Sainte-Honorine", "zip": "78700", "slug": "serrurier-conflans-sainte-honorine-78700"},
+        {"name": "Les Mureaux", "zip": "78130", "slug": "serrurier-les-mureaux-78130"},
+        {"name": "Houilles", "zip": "78800", "slug": "serrurier-houilles-78800"},
+        {"name": "Plaisir", "zip": "78370", "slug": "serrurier-plaisir-78370"},
+        {"name": "Chatou", "zip": "78400", "slug": "serrurier-chatou-78400"},
+        {"name": "Le Chesnay-Rocquencourt", "zip": "78150", "slug": "serrurier-le-chesnay-rocquencourt-78150"},
+        {"name": "Trappes", "zip": "78190", "slug": "serrurier-trappes-78190"}
+      ]
+    },
+    {
+      "code": "91",
+      "name": "Essonne",
+      "cities": [
+        {"name": "Évry-Courcouronnes", "zip": "91000", "slug": "serrurier-evry-courcouronnes-91000"},
+        {"name": "Corbeil-Essonnes", "zip": "91100", "slug": "serrurier-corbeil-essonnes-91100"},
+        {"name": "Massy", "zip": "91300", "slug": "serrurier-massy-91300"},
+        {"name": "Savigny-sur-Orge", "zip": "91600", "slug": "serrurier-savigny-sur-orge-91600"},
+        {"name": "Sainte-Geneviève-des-Bois", "zip": "91700", "slug": "serrurier-sainte-genevieve-des-bois-91700"},
+        {"name": "Viry-Châtillon", "zip": "91170", "slug": "serrurier-viry-chatillon-91170"},
+        {"name": "Athis-Mons", "zip": "91200", "slug": "serrurier-athis-mons-91200"},
+        {"name": "Palaiseau", "zip": "91120", "slug": "serrurier-palaiseau-91120"},
+        {"name": "Yerres", "zip": "91330", "slug": "serrurier-yerres-91330"},
+        {"name": "Draveil", "zip": "91210", "slug": "serrurier-draveil-91210"},
+        {"name": "Grigny", "zip": "91350", "slug": "serrurier-grigny-91350"},
+        {"name": "Ris-Orangis", "zip": "91130", "slug": "serrurier-ris-orangis-91130"}
+      ]
+    },
+    {
+      "code": "92",
+      "name": "Hauts-de-Seine",
+      "cities": [
+        {"name": "Boulogne-Billancourt", "zip": "92100", "slug": "serrurier-boulogne-billancourt-92100"},
+        {"name": "Nanterre", "zip": "92000", "slug": "serrurier-nanterre-92000"},
+        {"name": "Colombes", "zip": "92700", "slug": "serrurier-colombes-92700"},
+        {"name": "Courbevoie", "zip": "92400", "slug": "serrurier-courbevoie-92400"},
+        {"name": "Asnières-sur-Seine", "zip": "92600", "slug": "serrurier-asnieres-sur-seine-92600"},
+        {"name": "Rueil-Malmaison", "zip": "92500", "slug": "serrurier-rueil-malmaison-92500"},
+        {"name": "Levallois-Perret", "zip": "92300", "slug": "serrurier-levallois-perret-92300"},
+        {"name": "Issy-les-Moulineaux", "zip": "92130", "slug": "serrurier-issy-les-moulineaux-92130"},
+        {"name": "Antony", "zip": "92160", "slug": "serrurier-antony-92160"},
+        {"name": "Neuilly-sur-Seine", "zip": "92200", "slug": "serrurier-neuilly-sur-seine-92200"},
+        {"name": "Clamart", "zip": "92140", "slug": "serrurier-clamart-92140"},
+        {"name": "Montrouge", "zip": "92120", "slug": "serrurier-montrouge-92120"},
+        {"name": "Meudon", "zip": "92190", "slug": "serrurier-meudon-92190"},
+        {"name": "Puteaux", "zip": "92800", "slug": "serrurier-puteaux-92800"},
+        {"name": "Suresnes", "zip": "92150", "slug": "serrurier-suresnes-92150"}
+      ]
+    },
+    {
+      "code": "93",
+      "name": "Seine-Saint-Denis",
+      "cities": [
+        {"name": "Montreuil", "zip": "93100", "slug": "serrurier-montreuil-93100"},
+        {"name": "Saint-Denis", "zip": "93200", "slug": "serrurier-saint-denis-93200"},
+        {"name": "Aulnay-sous-Bois", "zip": "93600", "slug": "serrurier-aulnay-sous-bois-93600"},
+        {"name": "Aubervilliers", "zip": "93300", "slug": "serrurier-aubervilliers-93300"},
+        {"name": "Drancy", "zip": "93700", "slug": "serrurier-drancy-93700"},
+        {"name": "Noisy-le-Grand", "zip": "93160", "slug": "serrurier-noisy-le-grand-93160"},
+        {"name": "Pantin", "zip": "93500", "slug": "serrurier-pantin-93500"},
+        {"name": "Bondy", "zip": "93140", "slug": "serrurier-bondy-93140"},
+        {"name": "Épinay-sur-Seine", "zip": "93800", "slug": "serrurier-epinay-sur-seine-93800"},
+        {"name": "Bobigny", "zip": "93000", "slug": "serrurier-bobigny-93000"},
+        {"name": "Sevran", "zip": "93270", "slug": "serrurier-sevran-93270"},
+        {"name": "Livry-Gargan", "zip": "93190", "slug": "serrurier-livry-gargan-93190"},
+        {"name": "Le Blanc-Mesnil", "zip": "93150", "slug": "serrurier-le-blanc-mesnil-93150"},
+        {"name": "Rosny-sous-Bois", "zip": "93110", "slug": "serrurier-rosny-sous-bois-93110"},
+        {"name": "Villepinte", "zip": "93420", "slug": "serrurier-villepinte-93420"}
+      ]
+    },
+    {
+      "code": "94",
+      "name": "Val-de-Marne",
+      "cities": [
+        {"name": "Créteil", "zip": "94000", "slug": "serrurier-creteil-94000"},
+        {"name": "Vitry-sur-Seine", "zip": "94400", "slug": "serrurier-vitry-sur-seine-94400"},
+        {"name": "Saint-Maur-des-Fossés", "zip": "94100", "slug": "serrurier-saint-maur-des-fosses-94100"},
+        {"name": "Champigny-sur-Marne", "zip": "94500", "slug": "serrurier-champigny-sur-marne-94500"},
+        {"name": "Ivry-sur-Seine", "zip": "94200", "slug": "serrurier-ivry-sur-seine-94200"},
+        {"name": "Maisons-Alfort", "zip": "94700", "slug": "serrurier-maisons-alfort-94700"},
+        {"name": "Fontenay-sous-Bois", "zip": "94120", "slug": "serrurier-fontenay-sous-bois-94120"},
+        {"name": "Villejuif", "zip": "94800", "slug": "serrurier-villejuif-94800"},
+        {"name": "Vincennes", "zip": "94300", "slug": "serrurier-vincennes-94300"},
+        {"name": "Alfortville", "zip": "94140", "slug": "serrurier-alfortville-94140"},
+        {"name": "Cachan", "zip": "94230", "slug": "serrurier-cachan-94230"},
+        {"name": "Le Kremlin-Bicêtre", "zip": "94270", "slug": "serrurier-le-kremlin-bicetre-94270"},
+        {"name": "Thiais", "zip": "94320", "slug": "serrurier-thiais-94320"},
+        {"name": "Nogent-sur-Marne", "zip": "94130", "slug": "serrurier-nogent-sur-marne-94130"},
+        {"name": "Choisy-le-Roi", "zip": "94600", "slug": "serrurier-choisy-le-roi-94600"}
+      ]
+    },
+    {
+      "code": "95",
+      "name": "Val-d'Oise",
+      "cities": [
+        {"name": "Argenteuil", "zip": "95100", "slug": "serrurier-argenteuil-95100"},
+        {"name": "Sarcelles", "zip": "95200", "slug": "serrurier-sarcelles-95200"},
+        {"name": "Cergy", "zip": "95000", "slug": "serrurier-cergy-95000"},
+        {"name": "Garges-lès-Gonesse", "zip": "95140", "slug": "serrurier-garges-les-gonesse-95140"},
+        {"name": "Franconville", "zip": "95130", "slug": "serrurier-franconville-95130"},
+        {"name": "Goussainville", "zip": "95190", "slug": "serrurier-goussainville-95190"},
+        {"name": "Pontoise", "zip": "95300", "slug": "serrurier-pontoise-95300"},
+        {"name": "Bezons", "zip": "95870", "slug": "serrurier-bezons-95870"},
+        {"name": "Ermont", "zip": "95120", "slug": "serrurier-ermont-95120"},
+        {"name": "Villiers-le-Bel", "zip": "95400", "slug": "serrurier-villiers-le-bel-95400"},
+        {"name": "Herblay-sur-Seine", "zip": "95220", "slug": "serrurier-herblay-sur-seine-95220"},
+        {"name": "Taverny", "zip": "95150", "slug": "serrurier-taverny-95150"}
+      ]
+    }
+  ]
+}
