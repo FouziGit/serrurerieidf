@@ -210,7 +210,7 @@
         </div>
 
         <h1 class="gradient-text">{{H1_TITLE}} :<br>Dépannage en 20 min</h1>
-        <p>Serrurier de proximité disponible 24h/24 et 7j/7. Ouverture de porte sans dégâts, changement de cylindre
+        <p style="color: #fff; font-size: 1.15rem; max-width: 560px; line-height: 1.7; margin-bottom: 2rem;">Serrurier de proximité disponible 24h/24 et 7j/7. Ouverture de porte sans dégâts, changement de cylindre
           haute sécurité A2P, blindage de porte. Tarifs transparents, sans surprise.</p>
 
         <div class="hero-actions">
@@ -304,12 +304,22 @@
     </div>
   </section>
 
+  <!-- ===== SEO GEO CONTENT ===== -->
+  <section class="section" id="zone-info">
+    <div class="container">
+      <div class="authority-text animate-on-scroll" style="max-width: 900px; margin: 0 auto; line-height: 1.9;">
+        <h2 class="section-title">Votre serrurier à <span class="text-accent">{{CITY_NAME}}</span></h2>
+        {{SEO_CONTENT}}
+      </div>
+    </div>
+  </section>
+
   <!-- ===== SERVICES ===== -->
   <section class="section section-light" id="services">
     <div class="container">
-      <h2 class="section-title">Nos Services de <span class="text-accent">Serrurerie</span></h2>
+      <h2 class="section-title">Nos Services de <span class="text-accent">Serrurerie à {{CITY_NAME}}</span></h2>
       <p class="section-subtitle">De l'ouverture de porte d'urgence au blindage complet, notre équipe d'artisans
-        serruriers agréés assurances intervient sur toute l'Île-de-France.</p>
+        serruriers agréés assurances intervient à {{CITY_NAME}} et dans tout le département {{DEPT_NAME}}.</p>
 
       <div class="services-grid">
         <!-- Service 1 -->
