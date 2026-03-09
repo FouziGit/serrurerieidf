@@ -13,7 +13,17 @@ const citiesPath = path.join(__dirname, 'data', 'cities.json');
 const templatePath = path.join(__dirname, 'template-city.html');
 const outputDir = path.join(__dirname, 'pages-villes');
 
-// --- SEO Content Generator ---
+const DEBUG = process.env.DEBUG === '1';
+function log(...args) { if (DEBUG) console.log(...args); }
+
+/**
+ * Generate unique SEO content block for a city landing page.
+ * @param {string} cityName - Display name of the city
+ * @param {string} zip - Postal code
+ * @param {string} deptName - Department name
+ * @param {string} deptCode - Department code (75, 77, 78, 91, 92, 93, 94, 95)
+ * @returns {string} HTML content block
+ */
 function generateSEOContent(cityName, zip, deptName, deptCode) {
     const isParis = deptCode === '75';
     const isPC = ['92', '93', '94'].includes(deptCode); // petite couronne
@@ -68,9 +78,9 @@ function generateSlug(name) {
 }
 
 function main() {
-    console.log('===========================================');
-    console.log('  URGENCE SERRURES — Générateur SSG (SEO)');
-    console.log('===========================================\n');
+    log('===========================================');
+    log('  URGENCE SERRURES — Générateur SSG (SEO)');
+    log('===========================================\n');
 
     // 1. Load Data & Template
     if (!fs.existsSync(citiesPath) || !fs.existsSync(templatePath)) {
@@ -90,8 +100,8 @@ function main() {
     let totalCities = 0;
 
     data.departments.forEach(dept => {
-        console.log(`\n📍 ${dept.name} (${dept.code})`);
-        console.log('─'.repeat(40));
+        log(`\n📍 ${dept.name} (${dept.code})`);
+        log('─'.repeat(40));
 
         dept.cities.forEach(city => {
             const slug = city.slug || `serrurier-${generateSlug(city.name)}-${city.zip}`;
@@ -136,7 +146,7 @@ function main() {
             });
 
             totalCities++;
-            console.log(`  ✅ ${fileName}`);
+            log(`  ✅ ${fileName}`);
         });
     });
 
@@ -144,9 +154,9 @@ function main() {
     const routesOutPath = path.join(__dirname, 'data', 'routes.json');
     fs.writeFileSync(routesOutPath, JSON.stringify(allRoutes, null, 2), 'utf8');
 
-    console.log('\n===========================================');
-    console.log(`  🎉 ${totalCities} pages HTML générées dans /pages-villes/`);
-    console.log('===========================================\n');
+    log('\n===========================================');
+    log(`  🎉 ${totalCities} pages HTML générées dans /pages-villes/`);
+    log('===========================================\n');
 
     // 3. Generate _redirects for Netlify (Rewrite 200)
     const redirectsContent = allRoutes
@@ -155,7 +165,7 @@ function main() {
 
     const redirectsPath = path.join(__dirname, '_redirects');
     fs.writeFileSync(redirectsPath, redirectsContent + '\n', 'utf8');
-    console.log(`  📄 _redirects Netlify généré (Rewrite 200)\n`);
+    log('  📄 _redirects Netlify généré (Rewrite 200)\n');
 
     // 4. Generate sitemap.xml
     const baseUrl = 'https://urgenceserrures.fr';
@@ -191,7 +201,7 @@ function main() {
 
     const sitemapPath = path.join(__dirname, 'sitemap.xml');
     fs.writeFileSync(sitemapPath, sitemap, 'utf8');
-    console.log(`  📄 sitemap.xml généré (${totalCities + 2} URLs)\n`);
+    log(`  📄 sitemap.xml généré (${totalCities + 2} URLs)\n`);
 }
 
 main();

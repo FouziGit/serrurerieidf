@@ -25,16 +25,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // --- Header Scroll Effect ---
   const header = document.querySelector('.header');
-  let lastScroll = 0;
 
   window.addEventListener('scroll', () => {
-    const currentScroll = window.pageYOffset;
-    if (currentScroll > 50) {
+    if (window.pageYOffset > 50) {
       header.classList.add('scrolled');
     } else {
       header.classList.remove('scrolled');
     }
-    lastScroll = currentScroll;
   }, { passive: true });
 
   // --- FAQ Accordion ---
@@ -111,13 +108,21 @@ document.addEventListener('DOMContentLoaded', () => {
   // --- Contact Form Handler (Resend via Netlify Function) ---
   const form = document.getElementById('contact-form');
   if (form) {
+    let isSubmitting = false;
+
     form.addEventListener('submit', async (e) => {
       e.preventDefault();
+      if (isSubmitting) return;
+      isSubmitting = true;
+
       const btn = form.querySelector('.btn-submit');
       const originalText = btn.innerHTML;
 
       btn.innerHTML = 'Envoi en cours...';
       btn.disabled = true;
+
+      const controller = new AbortController();
+      const timeout = setTimeout(() => controller.abort(), 10000);
 
       try {
         const formData = {
@@ -132,7 +137,9 @@ document.addEventListener('DOMContentLoaded', () => {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(formData),
+          signal: controller.signal,
         });
+        clearTimeout(timeout);
 
         if (response.ok) {
           btn.innerHTML = '✓ Message envoyé !';
@@ -143,6 +150,7 @@ document.addEventListener('DOMContentLoaded', () => {
           btn.style.background = '#e74c3c';
         }
       } catch (error) {
+        clearTimeout(timeout);
         btn.innerHTML = '✗ Erreur, réessayez';
         btn.style.background = '#e74c3c';
       }
@@ -151,6 +159,7 @@ document.addEventListener('DOMContentLoaded', () => {
         btn.innerHTML = originalText;
         btn.style.background = '';
         btn.disabled = false;
+        isSubmitting = false;
       }, 3000);
     });
   }
@@ -182,10 +191,13 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // --- Particle System (Hero) ---
+  // Decorative particle backdrop for hero section. Pauses when scrolled out of view.
   const canvas = document.getElementById('particles-canvas');
   if (canvas) {
     const ctx = canvas.getContext('2d');
+    if (!ctx) { console.warn('Canvas 2D context not available'); } else {
+    const PARTICLE_DENSITY = 15000; // pixels per particle (higher = fewer)
+    const MAX_PARTICLES = 60;
     let particles = [];
     let animFrameId;
 
@@ -197,7 +209,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function createParticles() {
       particles = [];
-      const count = Math.min(60, Math.floor(canvas.width * canvas.height / 15000));
+      const count = Math.min(MAX_PARTICLES, Math.floor(canvas.width * canvas.height / PARTICLE_DENSITY));
       for (let i = 0; i < count; i++) {
         particles.push({
           x: Math.random() * canvas.width,
@@ -269,6 +281,7 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
     heroObserver.observe(canvas.parentElement);
+    } // ctx check
   }
 
   // --- Counter Animation ---
