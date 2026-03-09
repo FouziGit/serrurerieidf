@@ -123,7 +123,7 @@ function main() {
                 .replace(/{{META_DESC}}/g, metaDesc)
                 .replace(/{{CANONICAL}}/g, canonicalUrl)
                 .replace(/{{H1_TITLE}}/g, h1Title)
-                .replace(/{{JSON_AREA_SERVED}}/g, `        "${city.name}",\n        "${dept.name}",\n        "Île-de-France"`)
+                .replace(/{{JSON_AREA_SERVED}}/g, '')
                 .replace(/{{CITY_NAME}}/g, city.name)
                 .replace(/{{DEPT_NAME}}/g, dept.name)
                 .replace(/{{SEO_CONTENT}}/g, generateSEOContent(city.name, city.zip, dept.name, dept.code));
@@ -184,6 +184,18 @@ function main() {
     <lastmod>${today}</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>${baseUrl}/mentions-legales.html</loc>
+    <lastmod>${today}</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>${baseUrl}/politique-de-confidentialite.html</loc>
+    <lastmod>${today}</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
   </url>
 `;
 

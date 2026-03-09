@@ -1,0 +1,22 @@
+User-agent: *
+Allow: /
+Disallow: /data/
+Disallow: /.netlify/
+
+# AI crawlers — explicitly allowed for GEO visibility
+User-agent: GPTBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+Sitemap: https://urgenceserrures.fr/sitemap.xml
