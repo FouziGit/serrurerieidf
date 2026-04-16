@@ -1597,6 +1597,10 @@ button {
   transition-delay: 0.6s;
 }
 
+.animate-on-scroll.delay-7 {
+  transition-delay: 0.7s;
+}
+
 /* --- Particles Canvas --- */
 #particles-canvas {
   position: absolute;

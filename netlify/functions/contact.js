@@ -1,6 +1,6 @@
 const RESEND_API_KEY = process.env.RESEND_API_KEY;
 const TO_EMAIL = process.env.CONTACT_EMAIL || "contact@monartisanidf.fr";
-const FROM_EMAIL = process.env.FROM_EMAIL || "noreply@monartisanidf.fr";
+const FROM_EMAIL = process.env.FROM_EMAIL || "noreply@urgenceserrures.fr";
 
 const MAX_BODY_SIZE = 10000; // 10 KB
 const PHONE_REGEX = /^[0-9+\s\-()]{8,20}$/;
