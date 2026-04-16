@@ -164,6 +164,32 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  // --- Modal Badge ---
+  const modalOverlay = document.getElementById('badge-modal');
+  const modalTrigger = document.getElementById('badge-modal-trigger');
+  const modalCloseBtn = document.getElementById('modal-close-btn');
+
+  if (modalOverlay && modalTrigger) {
+    modalTrigger.addEventListener('click', (e) => {
+      e.preventDefault();
+      modalOverlay.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    });
+
+    const closeModal = () => {
+      modalOverlay.classList.remove('open');
+      document.body.style.overflow = '';
+    };
+
+    modalCloseBtn.addEventListener('click', closeModal);
+    modalOverlay.addEventListener('click', (e) => {
+      if (e.target === modalOverlay) closeModal();
+    });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeModal();
+    });
+  }
+
   // --- Department Card Filter (zones page) ---
   const deptCards = document.querySelectorAll('.dept-card');
   deptCards.forEach(card => {
